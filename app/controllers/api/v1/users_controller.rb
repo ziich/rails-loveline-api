@@ -13,7 +13,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     @user = User.new(user_params)
     @user.loveline = Loveline.find(params['loveline_id'])
     if @user.save
-      render :show,status: :created
+      render :index ,status: :created
     else
       render_error
     end
@@ -65,7 +65,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def user_params
-    params.require(:user).permit(:name, :avatar, :open_id)
+    params.require(:user).permit(:nickname, :avatar_url, :gender,:open_id)
   end
 
   def render_error
