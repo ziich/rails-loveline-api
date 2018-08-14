@@ -1,0 +1,2 @@
+class Loveline < ApplicationRecord
+end
