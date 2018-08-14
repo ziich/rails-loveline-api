@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_14_033039) do
+ActiveRecord::Schema.define(version: 2018_08_14_044128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2018_08_14_033039) do
     t.string "open_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "loveline_id"
+    t.index ["loveline_id"], name: "index_users_on_loveline_id"
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|
@@ -71,4 +73,5 @@ ActiveRecord::Schema.define(version: 2018_08_14_033039) do
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "lovelines"
   add_foreign_key "posts", "users"
+  add_foreign_key "users", "lovelines"
 end
