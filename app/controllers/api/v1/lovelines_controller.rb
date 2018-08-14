@@ -1,0 +1,23 @@
+class Api::V1::LovelinesController < Api::V1::BaseController
+  def index
+    @lovelines = Loveline.all.order('created_at DESC')
+  end
+
+  def create
+    @loveline = Loveline.new(loveline_params)
+    if @loveline.save
+      render :index
+    else
+      render_error
+    end
+  end
+
+  private
+
+  def loveline_params
+    params.require(:loveline).permit(:user_one_id, :user_two_id)
+  end
+  def render_error
+    render json: { errors: @loveline.errors.full_messages },status: :unprocessable_entity
+  end
+end
