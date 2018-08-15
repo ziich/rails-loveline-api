@@ -3,7 +3,7 @@ json.posts do
     json.extract! post, :id, :title,:content, :image_url
     json.date post.created_at.strftime("%m/%d/%y")
     json.post_user post.user, :id, :nickname, :avatar_url, :gender
-    json.post_loveline post.loveline, :id,:user_one_id, :user_two_id
+    json.post_loveline post.loveline, :id
     json.comments post.comments do |comment|
       json.extract! comment, :id, :content
       json.date comment.created_at.strftime("%m/%d/%y")

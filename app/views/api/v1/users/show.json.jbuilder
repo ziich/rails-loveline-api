@@ -1,5 +1,5 @@
 json.extract! @user, :id, :nickname, :avatar_url, :gender
-json.user_loveline @user.loveline, :id, :user_one_id, :user_two_id
+json.user_loveline @user.loveline, :id
 json.posts do
 json.array! @user.posts do |post|
     json.extract! post, :id, :title, :content, :image_url
