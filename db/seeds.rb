@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Loveline.create(user_one_id: 1, user_two_id: 2)
-Loveline.create(user_one_id: 3, user_two_id: 4)
+Loveline.create()
+Loveline.create()
 
 User.create(nickname: "yunshengji", gender: 1, avatar_url: "http//gee", loveline_id: 1)
 User.create(nickname: "Chris", gender: 1, avatar_url: "http//chris", loveline_id: 1)
