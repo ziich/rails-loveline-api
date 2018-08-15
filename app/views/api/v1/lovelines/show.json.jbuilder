@@ -1,3 +1,10 @@
+json.lovelines_users do
+ json.array! @loveline.users do |user|
+    json.extract! user, :id, :nickname,:gender, :avatar_url
+ end
+end
+
+
 json.lovelines_posts do
   json.array! @loveline.posts do |post|
     json.extract! post, :id, :title,:content, :image_url
