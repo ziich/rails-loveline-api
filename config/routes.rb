@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :lovelines, only: [:index, :create]
 
-      resources :users, only: [:index, :create]
+      resources :users, only: [:index, :create, :update, :show]
       post '/users/login', to: 'users#login'
 
       resources :posts, only: [ :index, :show, :create, :destroy ] do
