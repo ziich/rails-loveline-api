@@ -9,11 +9,20 @@ class Api::V1::UsersController < Api::V1::BaseController
   def show
   end
 
+
+  def update
+    if @user.update(user_params)
+      render :show
+    else
+      render_error
+    end
+  end
+
   def create
     @user = User.new(user_params)
     @user.loveline = Loveline.find(params['loveline_id'])
     if @user.save
-      render :index ,status: :created
+      render :show
     else
       render_error
     end

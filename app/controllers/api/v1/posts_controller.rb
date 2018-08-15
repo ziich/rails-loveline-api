@@ -18,8 +18,6 @@ class Api::V1::PostsController < Api::V1::BaseController
 
   def create
     p "creating............................"
-    p params.inspect
-    p params['user_id']
     @post = Post.new(post_params)
     @post.loveline = Loveline.find(params['loveline_id'])
     @post.user = User.find(params['user_id'])
