@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create, :update, :show, :destroy]
 
 
-      resources :posts, only: [ :index, :show, :create, :destroy ] do
+      resources :posts, only: [ :index, :show, :create, :destroy, :update ] do
           collection do
             get :for_current_user
           end
