@@ -1,5 +1,5 @@
 class Api::V1::PostsController < Api::V1::BaseController
-  before_action :set_post, only: [ :show, :destroy ]
+  before_action :set_post, only: [ :show, :destroy, :update ]
 
   def index
     @posts = Post.all.order('created_at DESC')
@@ -33,6 +33,13 @@ class Api::V1::PostsController < Api::V1::BaseController
     head :no_content
   end
 
+  def update
+    if @post.update(post_params)
+      render :show
+    else
+      render_error
+    end
+  end
 
 
   private
