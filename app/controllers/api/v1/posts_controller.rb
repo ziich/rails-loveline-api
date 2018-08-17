@@ -42,7 +42,7 @@ class Api::V1::PostsController < Api::V1::BaseController
   end
 
   def post_params
-    params.require(:post).permit(:content, :title, :image_url )
+    params.require(:post).permit(:loveline_id, :content, :title, :image_url=>[] )
   end
 
   def render_error

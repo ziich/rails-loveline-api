@@ -49,7 +49,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   def user_params
-    params.require(:user).permit(:nickname, :avatar_url, :gender,:open_id)
+    params.require(:user).permit(:loveline_id, :nickname, :avatar_url, :gender,:open_id)
   end
 
   def render_error
