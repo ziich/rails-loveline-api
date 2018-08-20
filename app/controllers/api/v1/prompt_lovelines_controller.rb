@@ -13,7 +13,7 @@ class Api::V1::PromptLovelinesController < Api::V1::BaseController
   def create
     @prompt_loveline = PromptLoveline.new(prompt_loveline_params)
     if @prompt_loveline.save
-      render :index
+      render :show, status: :created
     else
       render_error
     end
