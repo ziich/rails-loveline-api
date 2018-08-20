@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  user: one
+  prompt_loveline: one
+
+two:
+  content: MyText
+  user: two
+  prompt_loveline: two
