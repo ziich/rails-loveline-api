@@ -5,6 +5,7 @@ json.lovelines_users do
 end
 
 
+json.date @loveline.created_at.strftime("%m/%d/%y")
 json.lovelines_posts do
   json.array! @loveline.posts do |post|
     json.extract! post, :id, :title,:content, :image_url
