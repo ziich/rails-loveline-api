@@ -7,7 +7,10 @@ class Api::V1::LovelinesController < Api::V1::BaseController
   def show
 
   end
-
+  def destroy
+    @loveline.destroy
+    head :no_content
+  end
 
   def create
     @loveline = Loveline.new()
