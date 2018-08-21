@@ -10,6 +10,8 @@ class Api::V1::PromptLovelinesController < Api::V1::BaseController
   def show
   end
 
+
+
   def create
     @prompt_loveline = PromptLoveline.new(prompt_loveline_params)
     if @prompt_loveline.save
