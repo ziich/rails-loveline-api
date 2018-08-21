@@ -1,6 +1,5 @@
 class PromptLoveline < ApplicationRecord
   belongs_to :prompt
   belongs_to :loveline
-  has_many :answers
-
+  has_many :answers, dependent: :destroy
 end

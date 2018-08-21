@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :prompt_lovelines,  only: [:index,:show, :create] do
+      resources :prompt_lovelines,  only: [:index,:show, :create,:destroy] do
         resources :answers, only: [:index, :create]
       end
       resources :prompts,  only: [:index,:show, :create]
