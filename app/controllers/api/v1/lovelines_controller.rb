@@ -18,6 +18,13 @@ class Api::V1::LovelinesController < Api::V1::BaseController
     end
   end
 
+
+  def destroy
+    @loveline.destroy
+    head :no_content
+  end
+
+
   private
 
   # def loveline_params
