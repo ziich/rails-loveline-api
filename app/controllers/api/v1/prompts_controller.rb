@@ -10,7 +10,7 @@ class Api::V1::PromptsController < Api::V1::BaseController
   def create
     @prompt = Prompt.new(prompt_params)
     if @prompt.save
-      render :index
+      render :show
     else
       render_error
     end
