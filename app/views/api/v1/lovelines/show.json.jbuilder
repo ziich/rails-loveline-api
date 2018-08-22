@@ -1,4 +1,5 @@
 json.loveline_id @loveline, :id
+json.loveline_score @loveline, :score
 json.date @loveline.created_at.strftime("%m/%d/%y")
 json.lovelines_users do
  json.array! @loveline.users do |user|
