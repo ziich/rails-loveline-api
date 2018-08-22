@@ -29,7 +29,7 @@ class Api::V1::PromptsController < Api::V1::BaseController
   end
 
   def prompt_params
-    params.require(:prompt).permit(:content)
+    params.require(:prompt).permit(:content, :score)
   end
 
   def render_error
