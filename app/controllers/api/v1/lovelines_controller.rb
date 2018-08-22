@@ -18,6 +18,15 @@ class Api::V1::LovelinesController < Api::V1::BaseController
     end
   end
 
+  def update
+    if @loveline.update(loveline_params)
+      render :show
+    else
+      render_error
+    end
+  end
+
+
 
   def destroy
     @loveline.destroy
@@ -27,9 +36,9 @@ class Api::V1::LovelinesController < Api::V1::BaseController
 
   private
 
-  # def loveline_params
-  #   params.require(:loveline).permit(:user_one_id, :user_two_id)
-  # end
+  def loveline_params
+    params.require(:loveline).permit(:score)
+  end
   def render_error
     render json: { errors: @loveline.errors.full_messages },status: :unprocessable_entity
   end

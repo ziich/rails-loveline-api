@@ -8,7 +8,7 @@ Rails.application.routes.draw do
         resources :answers, only: [:index, :create]
       end
       resources :prompts,  only: [:index,:show, :create]
-      resources :lovelines, only: [:index, :create, :show, :destroy]
+      resources :lovelines, only: [:index, :create, :show, :destroy,:update]
 
       resources :users, only: [:index, :create, :update, :show, :destroy]
 
