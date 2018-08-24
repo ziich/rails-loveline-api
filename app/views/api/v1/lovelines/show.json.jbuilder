@@ -14,6 +14,7 @@ json.prompts do
 
   json.array! @loveline.prompt_lovelines do |prompt_loveline|
     json.prompt_id prompt_loveline, :id
+    json.prompt_score prompt_loveline.prompt, :score
     json.Prompt_created_Date prompt_loveline.created_at.strftime("%m/%d/%y")
     json.question prompt_loveline.prompt.content
     json.answers prompt_loveline.answers do |answer|
